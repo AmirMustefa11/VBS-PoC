@@ -1,5 +1,4 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion'
-import { useState } from 'react'
 import './components/playMotion/motionFramer3D'
 import MotionFramer3D from './components/playMotion/motionFramer3D'
 

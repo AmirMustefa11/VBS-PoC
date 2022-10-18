@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { useState } from 'react'
-import './components/play-motion/motionFramer3D'
-import MotionFramer3D from './components/play-motion/motionFramer3D'
+import './components/playMotion/motionFramer3D'
+import MotionFramer3D from './components/playMotion/motionFramer3D'
 
 function Example3D() {
   const x = useMotionValue(0)

@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion-3d'
 import { MotionConfig } from 'framer-motion'
 import { useRef, useLayoutEffect } from 'react'
-import { transition } from './settings'
+import { transition } from '../../../lib/settings'
 import { Canvas, useThree } from '@react-three/fiber'
-import { useSmoothTransform } from './use-smooth-transform'
+import { useSmoothTransform } from '../../../lib/use-smooth-transform'
 
-export function Shapes({ isHover, isPress, mouseX, mouseY }) {
+const Shapes = ({ isHover, isPress, mouseX, mouseY }) => {
   const lightRotateX = useSmoothTransform(mouseY, spring, mouseToLightRotation)
   const lightRotateY = useSmoothTransform(mouseX, spring, mouseToLightRotation)
 
@@ -165,3 +165,4 @@ function Camera({ mouseX, mouseY, ...props }) {
 const spring = { stiffness: 600, damping: 30 }
 
 const mouseToLightRotation = (v) => (-1 * v) / 140
+export default Shapes

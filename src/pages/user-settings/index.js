@@ -1,3 +1,4 @@
+import SharedLayout from '@/components/layout/shared-layout'
 import Settings from '@/components/ui/forms/settings-form'
 import useAuthProtection from '@/hooks/useAuthProtection'
 

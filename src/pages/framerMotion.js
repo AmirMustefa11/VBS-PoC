@@ -1,4 +1,5 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion'
+import { useState } from 'react'
 import './components/playMotion/motionFramer3D'
 import MotionFramer3D from './components/playMotion/motionFramer3D'
 
@@ -73,7 +74,7 @@ function Input({ value, children, set, min = -200, max = 200 }) {
   )
 }
 
-export default function framerMotion() {
+const FramerMotion = (props) => {
   const [x, setX] = useState(0)
   const [y, setY] = useState(0)
   const [rotate, setRotate] = useState(0)
@@ -277,3 +278,4 @@ export default function framerMotion() {
     </>
   )
 }
+export default FramerMotion

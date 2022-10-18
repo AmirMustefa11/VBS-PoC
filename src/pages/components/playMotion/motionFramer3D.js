@@ -1,6 +1,6 @@
 import { Suspense, useState } from 'react'
 import { motion, MotionConfig, useMotionValue } from 'framer-motion'
-import { Shapes } from './Shapes'
+import Shapes from './Shapes'
 import { transition } from '../../../lib/settings'
 import useMeasure from 'react-use-measure'
 

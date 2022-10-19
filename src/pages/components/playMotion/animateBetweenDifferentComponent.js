@@ -20,6 +20,7 @@ export default function AnimateBetweenComponents() {
     <AnimateSharedLayout>
       <ul
         style={{
+          background: 'black',
           listStyle: 'none',
           margin: '0',
           padding: '0',

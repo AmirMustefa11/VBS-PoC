@@ -30,10 +30,12 @@ function Item() {
   const toggleOpen = () => setIsOpen(!isOpen)
 
   return (
-    <motion.li layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
-      <motion.div className="avatar" layout />
-      <AnimatePresence>{isOpen && <Content />}</AnimatePresence>
-    </motion.li>
+    <div style={{ padding: '15px' }}>
+      <motion.li layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
+        <motion.div className="avatar" layout />
+        <AnimatePresence>{isOpen && <Content />}</AnimatePresence>
+      </motion.li>
+    </div>
   )
 }
 

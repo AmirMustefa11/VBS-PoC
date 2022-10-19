@@ -1,9 +1,11 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { useState } from 'react'
 import AnimateBetweenComponents from './components/playMotion/animateBetweenDifferentComponent'
+import AnimationFrame from './components/playMotion/AnimationFrame'
 import './components/playMotion/motionFramer3D'
 import MotionFramer3D from './components/playMotion/motionFramer3D'
 import SharedLayoutAnimation from './components/playMotion/SharedLayoutAnimation'
+import Title from './components/playMotion/Title'
 
 function Example3D() {
   const x = useMotionValue(0)
@@ -81,215 +83,231 @@ const FramerMotion = (props) => {
   const [y, setY] = useState(0)
   const [rotate, setRotate] = useState(0)
   return (
-    <>
-      <div
-        className="example"
-        style={{
-          backgroundColor: 'black',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '50px',
-        }}
-      >
-        <div>
-          <motion.div
-            className="box"
-            style={{
-              width: '200px',
-              height: '200px',
-              marginTop: '90px',
-              borderRadius: '20px',
-              border: '3px dotted white',
-              pointerEvents: 'none',
-            }}
-            animate={{ x, y, rotate }}
-            transition={{ type: 'spring' }}
-          />
-        </div>
+    <div style={{ backgroundColor: 'black' }}>
+      <div>
         <div
-          className="inputs"
           style={{
             display: 'flex',
-            flexDirection: 'column',
-            paddingLeft: '50px',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
-          <Input value={x} set={setX}>
-            move x
-          </Input>
-          <Input value={y} set={setY}>
-            move y
-          </Input>
-          <Input value={rotate} set={setRotate} min={-180} max={180}>
-            rotate
-          </Input>
+          <Title />
         </div>
-        <div>
-          <AnimateBetweenComponents />
-        </div>
-      </div>
-
-      {/* second examp  */}
-      <div
-        style={{
-          width: '100vw',
-          backgroundColor: 'black',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
         <div
+          className="example"
           style={{
-            padding: '50px',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'space-evenly',
+            padding: '50px',
           }}
         >
-          <motion.svg
-            width="400"
-            height="400"
-            viewBox="0 0 600 600"
-            initial="hidden"
-            animate="visible"
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
           >
-            <motion.circle
-              cx="100"
-              cy="100"
-              r="80"
-              stroke="#ff0055"
-              variants={draw}
-              custom={1}
-            />
-            <motion.line
-              x1="220"
-              y1="30"
-              x2="360"
-              y2="170"
-              stroke="#00cc88"
-              variants={draw}
-              custom={2}
-            />
-            <motion.line
-              x1="220"
-              y1="170"
-              x2="360"
-              y2="30"
-              stroke="#00cc88"
-              variants={draw}
-              custom={2.5}
-            />
-            <motion.rect
-              width="140"
-              height="140"
-              x="410"
-              y="30"
-              rx="20"
-              stroke="#0099ff"
-              variants={draw}
-              custom={3}
-            />
-            <motion.circle
-              cx="100"
-              cy="300"
-              r="80"
-              stroke="#0099ff"
-              variants={draw}
-              custom={2}
-            />
-            <motion.line
-              x1="220"
-              y1="230"
-              x2="360"
-              y2="370"
-              stroke="#ff0055"
-              custom={3}
-              variants={draw}
-            />
-            <motion.line
-              x1="220"
-              y1="370"
-              x2="360"
-              y2="230"
-              stroke="#ff0055"
-              custom={3.5}
-              variants={draw}
-            />
-            <motion.rect
-              width="140"
-              height="140"
-              x="410"
-              y="230"
-              rx="20"
-              stroke="#00cc88"
-              custom={4}
-              variants={draw}
-            />
-            <motion.circle
-              cx="100"
-              cy="500"
-              r="80"
-              stroke="#00cc88"
-              variants={draw}
-              custom={3}
-            />
-            <motion.line
-              x1="220"
-              y1="430"
-              x2="360"
-              y2="570"
-              stroke="#0099ff"
-              variants={draw}
-              custom={4}
-            />
-            <motion.line
-              x1="220"
-              y1="570"
-              x2="360"
-              y2="430"
-              stroke="#0099ff"
-              variants={draw}
-              custom={4.5}
-            />
-            <motion.rect
-              width="140"
-              height="140"
-              x="410"
-              y="430"
-              rx="20"
-              stroke="#ff0055"
-              variants={draw}
-              custom={5}
-            />
-          </motion.svg>
+            <div>
+              <motion.div
+                className="box"
+                style={{
+                  width: '200px',
+                  height: '200px',
+                  marginTop: '90px',
+                  borderRadius: '20px',
+                  border: '3px dotted white',
+                  pointerEvents: 'none',
+                }}
+                animate={{ x, y, rotate }}
+                transition={{ type: 'spring' }}
+              />
+            </div>
+            <div
+              className="inputs"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                paddingLeft: '50px',
+              }}
+            >
+              <Input value={x} set={setX}>
+                move x
+              </Input>
+              <Input value={y} set={setY}>
+                move y
+              </Input>
+              <Input value={rotate} set={setRotate} min={-180} max={180}>
+                rotate
+              </Input>
+            </div>
+          </div>
+          <div>
+            <AnimateBetweenComponents />
+          </div>
         </div>
-        <div>
-          <SharedLayoutAnimation />
-        </div>
-      </div>
 
-      <div
-        style={{
-          padding: '100px',
-          background: 'black',
-          display: 'flex',
-          justifyContent: 'center',
-          alignContent: 'center',
-        }}
-      >
-        <div style={{ margin: '50px' }}>
-          <Example3D />
+        {/* second examp  */}
+        <div
+          style={{
+            width: '100vw',
+            backgroundColor: 'black',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-evenly',
+          }}
+        >
+          <div
+            style={{
+              padding: '50px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <motion.svg
+              width="400"
+              height="400"
+              viewBox="0 0 600 600"
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.circle
+                cx="100"
+                cy="100"
+                r="80"
+                stroke="#ff0055"
+                variants={draw}
+                custom={1}
+              />
+              <motion.line
+                x1="220"
+                y1="30"
+                x2="360"
+                y2="170"
+                stroke="#00cc88"
+                variants={draw}
+                custom={2}
+              />
+              <motion.line
+                x1="220"
+                y1="170"
+                x2="360"
+                y2="30"
+                stroke="#00cc88"
+                variants={draw}
+                custom={2.5}
+              />
+              <motion.rect
+                width="140"
+                height="140"
+                x="410"
+                y="30"
+                rx="20"
+                stroke="#0099ff"
+                variants={draw}
+                custom={3}
+              />
+              <motion.circle
+                cx="100"
+                cy="300"
+                r="80"
+                stroke="#0099ff"
+                variants={draw}
+                custom={2}
+              />
+              <motion.line
+                x1="220"
+                y1="230"
+                x2="360"
+                y2="370"
+                stroke="#ff0055"
+                custom={3}
+                variants={draw}
+              />
+              <motion.line
+                x1="220"
+                y1="370"
+                x2="360"
+                y2="230"
+                stroke="#ff0055"
+                custom={3.5}
+                variants={draw}
+              />
+              <motion.rect
+                width="140"
+                height="140"
+                x="410"
+                y="230"
+                rx="20"
+                stroke="#00cc88"
+                custom={4}
+                variants={draw}
+              />
+              <motion.circle
+                cx="100"
+                cy="500"
+                r="80"
+                stroke="#00cc88"
+                variants={draw}
+                custom={3}
+              />
+              <motion.line
+                x1="220"
+                y1="430"
+                x2="360"
+                y2="570"
+                stroke="#0099ff"
+                variants={draw}
+                custom={4}
+              />
+              <motion.line
+                x1="220"
+                y1="570"
+                x2="360"
+                y2="430"
+                stroke="#0099ff"
+                variants={draw}
+                custom={4.5}
+              />
+              <motion.rect
+                width="140"
+                height="140"
+                x="410"
+                y="430"
+                rx="20"
+                stroke="#ff0055"
+                variants={draw}
+                custom={5}
+              />
+            </motion.svg>
+          </div>
+          <div>
+            <SharedLayoutAnimation />
+          </div>
         </div>
-        <div style={{ margin: '30px' }}>
-          <MotionFramer3D />
+
+        <div
+          style={{
+            padding: '100px',
+            background: 'black',
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            alignContent: 'center',
+          }}
+        >
+          <div style={{ margin: '50px' }}>
+            <Example3D />
+          </div>
+          <AnimationFrame />
+          <div style={{ margin: '30px' }}>
+            <MotionFramer3D />
+          </div>
         </div>
-        {/* <div>
-          <SharedLayoutAnimation />
-        </div> */}
       </div>
-    </>
+    </div>
   )
 }
 export default FramerMotion

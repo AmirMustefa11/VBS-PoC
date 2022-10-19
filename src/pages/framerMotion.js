@@ -1,6 +1,5 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { useState } from 'react'
-import LayoutCamera from './components/layoutOrthographicCamera/LayoutCamera'
 import AnimateBetweenComponents from './components/playMotion/animateBetweenDifferentComponent'
 import './components/playMotion/motionFramer3D'
 import MotionFramer3D from './components/playMotion/motionFramer3D'

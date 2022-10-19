@@ -1,7 +1,10 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { useState } from 'react'
+import LayoutCamera from './components/layoutOrthographicCamera/LayoutCamera'
+import AnimateBetweenComponents from './components/playMotion/animateBetweenDifferentComponent'
 import './components/playMotion/motionFramer3D'
 import MotionFramer3D from './components/playMotion/motionFramer3D'
+import SharedLayoutAnimation from './components/playMotion/SharedLayoutAnimation'
 
 function Example3D() {
   const x = useMotionValue(0)
@@ -123,6 +126,9 @@ const FramerMotion = (props) => {
             rotate
           </Input>
         </div>
+        <div>
+          <AnimateBetweenComponents />
+        </div>
       </div>
 
       {/* second examp  */}
@@ -130,6 +136,9 @@ const FramerMotion = (props) => {
         style={{
           width: '100vw',
           backgroundColor: 'black',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         <div
@@ -257,6 +266,9 @@ const FramerMotion = (props) => {
             />
           </motion.svg>
         </div>
+        <div>
+          <SharedLayoutAnimation />
+        </div>
       </div>
 
       <div
@@ -274,6 +286,9 @@ const FramerMotion = (props) => {
         <div style={{ margin: '30px' }}>
           <MotionFramer3D />
         </div>
+        {/* <div>
+          <SharedLayoutAnimation />
+        </div> */}
       </div>
     </>
   )

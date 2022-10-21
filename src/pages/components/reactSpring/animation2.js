@@ -29,7 +29,7 @@ const fn = (order, down, originalIndex, curIndex, y) => (index) =>
         immediate: false,
       }
 
-export default function DraggableList({ items }) {
+const DraggableList = ({ items }) => {
   const order = useRef(items.map((_, index) => index)) // Store indices as a local ref, this represents the item order
   /*
     Curries the default order for the initial, "rested" list state.
@@ -69,9 +69,11 @@ export default function DraggableList({ items }) {
               (y, s) => `translate3d(0,${y}px,0) scale(${s})`,
             ),
           }}
-          children={items[i]}
-        />
+        >
+          {items[i]}
+        </animated.div>
       ))}
     </div>
   )
 }
+export default DraggableList

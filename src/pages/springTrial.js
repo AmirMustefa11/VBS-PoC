@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import { useSpring, animated } from 'react-spring'
 import DraggableList from './components/reactSpring/animation2'
-import Deck from './components/reactSpring/animation3'
 import SpringAnimatedTitle from './components/reactSpring/SpringAnimatedTitle'
-import SpringBox from './components/reactSpring/SpringBox'
-import Goo from './components/reactSpring/SprintGoo'
 import UseMeasure from './components/reactSpring/useMeasure'
 import Animation4 from './components/SpringAnimation/animation4'
 

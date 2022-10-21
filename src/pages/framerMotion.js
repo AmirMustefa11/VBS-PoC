@@ -83,7 +83,7 @@ const FramerMotion = (props) => {
   const [y, setY] = useState(0)
   const [rotate, setRotate] = useState(0)
   return (
-    <div style={{ backgroundColor: 'black' }}>
+    <div style={{ backgroundColor: 'black', paddingTop: '150px' }}>
       <div>
         <div
           style={{
